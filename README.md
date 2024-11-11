@@ -18,6 +18,11 @@ Basic Git commands were used throughout the project, including branching, mergin
 2. UML Diagrams
 Created at least three different UML diagrams: Use Case, Component, and Class Diagrams, exported for easy viewing.
 
+![Corrected_Simple_Colored_Expense_Tracker_Class_Diagram](https://github.com/user-attachments/assets/995dfb30-9010-47b4-bc77-8ca518d9b9b1)
+
+
+
+
 3. Requirements Documentation
 Developed 5-10 requirements and documented them in tools like Airtable or Notion, with additional integration into a professional tool such as Jira. Mentioned the use of AI/LLMs for assistance.
 
