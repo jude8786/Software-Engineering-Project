@@ -20,7 +20,7 @@ Created at least three different UML diagrams: Use Case, Component, and Class Di
 
 ![Corrected_Simple_Colored_Expense_Tracker_Class_Diagram](https://github.com/user-attachments/assets/995dfb30-9010-47b4-bc77-8ca518d9b9b1)
 
-
+![Screenshot (186)](https://github.com/user-attachments/assets/b9df1cb9-d0c9-463c-b711-a230b47b6bb9)
 
 
 3. Requirements Documentation
