@@ -18,9 +18,19 @@ Basic Git commands were used throughout the project, including branching, mergin
 2. UML Diagrams
 Created at least three different UML diagrams: Use Case, Component, and Class Diagrams, exported for easy viewing.
 
+
+
+Class Diagram
 ![Corrected_Simple_Colored_Expense_Tracker_Class_Diagram](https://github.com/user-attachments/assets/995dfb30-9010-47b4-bc77-8ca518d9b9b1)
 
+
+Activity Diagram
 ![Screenshot (186)](https://github.com/user-attachments/assets/b9df1cb9-d0c9-463c-b711-a230b47b6bb9)
+
+
+Use Case Diagram
+![Screenshot (189)](https://github.com/user-attachments/assets/43c2f83a-c07f-4f54-a9ea-6e6527d012aa)
+
 
 
 3. Requirements Documentation
