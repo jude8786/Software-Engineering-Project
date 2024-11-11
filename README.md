@@ -70,31 +70,115 @@ The app SHOULD enable users to view expenses based on specific filters for bette
 4. Analysis
 Created a personalized checklist from the ‘ANA - Analysis’ learning unit and conducted a detailed analysis spanning at least two pages. This included 10-15 key points with brief explanations.
 
+Define Objectives:
+
+
+Deep Dive: Clarify not only the main objectives but also secondary goals, such as improving user engagement, increasing data accuracy, and enhancing scalability. Identify specific metrics or KPIs to measure the success of these objectives.
+
+Gather Data:
+
+
+Expansion: Consider sources beyond immediate availability—industry reports, competitor analysis, user surveys, and stakeholder interviews. This will help in understanding broader market and user needs.
+
+Data Verification:
+
+
+Advanced Techniques: Use statistical methods to validate data reliability and consistency. Implement anomaly detection systems to identify data that might skew analysis results.
+
+
+Choose Analytical Tools:
+
+
+Technology Selection: Evaluate the latest analytical tools in the market, considering their integration capabilities with existing systems, cost, scalability, and user support. Pilot testing tools can determine fit before full implementation.
+Conduct Preliminary Analysis:
+
+Exploratory Data Analysis (EDA): Use visual and quantitative methods to uncover initial patterns, characteristics, and points of interest in the data, which guides deeper analysis.
+
+
+Develop Hypotheses:
+
+Hypothesis Crafting: Formulate multiple hypotheses based on initial findings. Consider using a hypothesis matrix to prioritize and manage these hypotheses based on their potential impact and the effort required for testing.
+
+
+Detailed Data Analysis:
+
+Multi-faceted Approach: Employ various data analysis techniques such as predictive modeling, scenario analysis, and segmentation analysis. This can provide multiple perspectives on the data and richer insights.
+
+
+Interpret Findings:
+
+Contextual Interpretation: Analyze findings within the context of business objectives, market conditions, and competitive landscape. This holistic view helps in making informed decisions.
+
+
+Consider Implications:
+
+Strategic Implications: Look beyond immediate project implications to consider long-term impacts on the business strategy, customer relationships, and market position.
+
+
+Validate Conclusions:
+
+Peer Review: Engage external experts for peer reviews of the analysis to ensure neutrality and diminish biases.
+
+
+Report Writing:
+
+Detailed Documentation: Create comprehensive reports with visuals, detailed explanations, and actionable insights. Include appendices for data tables, methodological details, and code bases used in the analysis.
+
+
+Executive Summary:
+
+Clarity and Focus: Craft a summary that decisively conveys the most critical findings and recommendations in a format that decision-makers can quickly absorb.
+
+
+Recommendations:
+
+Actionable Steps: Provide clear, practical steps that can be taken based on the analysis. Include short-term and long-term recommendations.
+
+
+Review and Revise:
+
+Continuous Improvement: Establish a routine for periodic review of the analysis outputs with stakeholders to refine and optimize the approach and outputs.
+
+
+Presentation:
+
+Engaging Delivery: Prepare presentations that are engaging and informative. Use multimedia elements to enhance understanding and retention of the presented information.
+
+
+Feedback Integration:
+
+Adaptive Response: Develop a system to integrate feedback effectively into the ongoing project, allowing for adaptive responses to challenges or new information that may arise during the project lifecycle.
+
+
+
+
 5. Domain-Driven Design (DDD)
 Conducted event-storming to discover relevant domains and charted these domains into a Core Domain Chart, illustrating their relationships and mappings.
 
-6. Metrics
+
+
+7. Metrics
 Included project metrics such as SonarQube analysis and additional non-trivial metrics.
 
-7. Clean Code Development (CCD)
+8. Clean Code Development (CCD)
 Demonstrated at least 5 clean code practices in the codebase, with explanations for why they are considered clean. Attached a personal CCD cheat sheet (PDF) with >10 points.
 
-8. Build Management
+9. Build Management
 Employed a build tool (e.g., Maven or Gradle) to automate processes like documentation generation and testing.
 
-9. Continuous Delivery
+10. Continuous Delivery
 Implemented a CI/CD pipeline using tools like GitHub Actions, with at least two automated scripts.
 
-10. Unit Tests
+11. Unit Tests
 Integrated comprehensive unit tests within the codebase.
 
-11. IDE Proficiency
+12. IDE Proficiency
 Used a preferred IDE (e.g., VSCode or IntelliJ) and documented the favorite shortcuts and techniques.
 
-12. DSL Implementation
+13. DSL Implementation
 Included a demonstration of a Domain-Specific Language snippet in the project.
 
-13. Functional Programming
+14. Functional Programming
 Demonstrated the use of functional programming aspects such as side-effect-free functions, closures, and higher-order functions.
 
 🏆 Bonus
