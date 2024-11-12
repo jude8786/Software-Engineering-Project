@@ -157,6 +157,15 @@ Conducted event-storming to discover relevant domains and charted these domains 
 
 ![Screenshot (211)](https://github.com/user-attachments/assets/ea6527f6-d9c3-415a-9f83-1388b793e4d2)
 
+
+
+![Screenshot (212)](https://github.com/user-attachments/assets/b2875f14-24ec-43e8-bfb0-9b92e3b2b959)
+
+
+
+
+
+
 7. Metrics
 Included project metrics such as SonarQube analysis and additional non-trivial metrics.
 
