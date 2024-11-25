@@ -58,7 +58,6 @@ Data visualization SHOULD clearly display expense amounts and labels for each da
 
 V. Dark/Light Mode Support:
 The app MUST provide a toggle option for switching between dark and light themes.
-User theme preferences MUST persist across sessions.
 The UI SHOULD maintain a consistent, user-friendly experience in both modes.
 
 VI. Expense Categories and Filtering:
