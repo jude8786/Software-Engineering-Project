@@ -165,6 +165,7 @@ Conducted event-storming to discover relevant domains and charted these domains 
 
 
 
+![Screenshot (356)](https://github.com/user-attachments/assets/e562d150-c262-4de4-bf5c-4da60dc69c93)
 
 
 
