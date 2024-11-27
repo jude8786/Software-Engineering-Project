@@ -154,6 +154,9 @@ Adaptive Response: Develop a system to integrate feedback effectively into the o
 5. Domain-Driven Design (DDD)
 Conducted event-storming to discover relevant domains and charted these domains into a Core Domain Chart, illustrating their relationships and mappings.
 
+![Screenshot (358)](https://github.com/user-attachments/assets/595ba08b-9aeb-4701-9aae-9f51982784b7)
+
+
 ![Screenshot (211)](https://github.com/user-attachments/assets/ea6527f6-d9c3-415a-9f83-1388b793e4d2)
 
 
