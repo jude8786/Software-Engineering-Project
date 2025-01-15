@@ -86,7 +86,7 @@ The app SHOULD enable users to view expenses based on specific filters for bette
 - [ ] Future Expansion
 
 The detailed pdf file is in the link below
-
+PDF File(https://github.com/jude8786/Software-Engineering-Project/blob/master/Expense%20Tracker%20Project%20Analysis%20Checklist.pdf)
 
 5. Domain-Driven Design (DDD)
 Conducted event-storming to discover relevant domains and charted these domains into a Core Domain Chart, illustrating their relationships and mappings.
