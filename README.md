@@ -204,10 +204,30 @@ Integrated comprehensive unit tests within the codebase.
 12. IDE Proficiency
 Used a preferred IDE (e.g., VSCode or IntelliJ) and documented the favorite shortcuts and techniques.
 
-13. DSL Implementation
+Key Features Used:
+Extensions:
+Flutter, Dart, Flutter Stylizer, GitLens
+Integrated Terminal:
+Running flutter pub get, flutter analyze, and version control commands.
+Debugging:
+Using the Flutter Inspector, examining widget trees, and stepping through code with breakpoints.
+
+
+
+Favorite Shortcuts:
+Ctrl + Shift + O: View and navigate to symbols (methods, classes) in the current file.
+Alt + Shift + F10: Toggle between the Flutter Inspector and Debug Console during debugging.
+Ctrl + Shift + K: Delete the current line of code.
+F6: Rename a variable or method and refactor all occurrences in the project.
+Ctrl + Shift + M: Open the Problems tab to view errors and warnings across the project.
+Ctrl + Shift + T: Reopen a recently closed file in your workspace.
+Shift + Alt + Right/Left Arrow: Expand or shrink the selection scope (e.g., to select a widget or method).
+Ctrl + ` (Backtick): Quickly open or hide the integrated terminal.
+
+14. DSL Implementation
 Included a demonstration of a Domain-Specific Language snippet in the project.
 
-14. Functional Programming
+15. Functional Programming
 Demonstrated the use of functional programming aspects such as side-effect-free functions, closures, and higher-order functions.
 
 🏆 Bonus
