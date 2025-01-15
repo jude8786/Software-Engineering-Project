@@ -175,6 +175,23 @@ Included project metrics such as SonarQube analysis and additional non-trivial m
 8. Clean Code Development (CCD)
 Demonstrated at least 5 clean code practices in the codebase, with explanations for why they are considered clean. Attached a personal CCD cheat sheet (PDF) with >10 points.
 
+Single Responsibility Principle
+
+Example: BudgetScreen only manages budget operations instead of mixing transaction logic.
+Readable Names
+
+Updated _buildHomeTab to have meaningful and structured widgets like _buildBudgetOverview and _buildTransactionList.
+Encapsulation
+
+State variables like _selectedIndex and _expenses are private to HomeScreen or ExpenseTrackerAppState to avoid external modifications.
+DRY Principle
+
+Extracted reusable widget code (e.g., Card for transactions, budget overview) into their respective methods to avoid duplication.
+Theme Management (Mixins Idea Applied)
+
+Centralized theme logic to apply dark and light modes consistently across screens.
+
+
 9. Build Management
 Employed a build tool (e.g., Maven or Gradle) to automate processes like documentation generation and testing.
 
