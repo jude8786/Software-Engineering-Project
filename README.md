@@ -113,6 +113,14 @@ Included project metrics such as SonarQube analysis and additional non-trivial m
 Demonstrated at least 5 clean code practices in the codebase, with explanations for why they are considered clean. Attached a personal CCD cheat sheet (PDF) with >10 points.
 
 Single Responsibility Principle
+Update: The _deleteExpense logic is extracted into a separate private method to handle budget updates, ensuring the _deleteExpense method focuses only on removing the expense.
+
+Readable Names
+Update: Renamed _buildHomeTab to _buildTransactionOverviewTab for better clarity about its purpose.
+
+
+
+Single Responsibility Principle
 
 Example: BudgetScreen only manages budget operations instead of mixing transaction logic.
 Readable Names
@@ -123,10 +131,23 @@ Encapsulation
 State variables like _selectedIndex and _expenses are private to HomeScreen or ExpenseTrackerAppState to avoid external modifications.
 DRY Principle
 
-Extracted reusable widget code (e.g., Card for transactions, budget overview) into their respective methods to avoid duplication.
-Theme Management (Mixins Idea Applied)
+Encapsulation:
+Encapsulated the input validation logic within a private _validateAndParseBudget method. This method now handles both validation and parsing, ensuring the rest of the code doesn’t worry about these details.
+_validateAndParseBudget encapsulates validation and parsing, which keeps the main _submitBudget method focused on handling the user action.
 
-Centralized theme logic to apply dark and light modes consistently across screens.
+
+
+DRY Principle:
+Reused _validateAndParseBudget for both input validation and parsing, avoiding redundant validation checks in multiple places.
+Avoided duplicating validation logic in multiple places. The same _validateAndParseBudget method is reused wherever input validation is required.
+
+DRY Principle:
+Removed repetitive expenses.isEmpty logic by creating a reusable private _buildEmptyMessage method.
+
+
+User Feedback:
+Added a confirmation dialog before deleting an expense to provide better user feedback and prevent accidental deletions.
+
 
 
 9. Build Management
