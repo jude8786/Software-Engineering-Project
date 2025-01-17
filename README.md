@@ -34,36 +34,7 @@ Use Case Diagram
 
 
 3. Requirements Documentation
-Developed 5-10 requirements and documented them in tools like Airtable or Notion, with additional integration into a professional tool such as Jira. Mentioned the use of AI/LLMs for assistance.
 
-I. User Authentication:
-The app MUST implement user authentication to ensure data security and personalized access.
-Users MUST log in to view and manage their expenses.
-Authentication SHOULD adhere to best practices for secure data handling.
-
-II. Budget Setting and Management:
-Users MUST be able to set a budget, which updates automatically as expenses are added or deleted.
-The app MUST display the remaining budget in real-time.
-Budget alerts SHOULD notify users when a set budget threshold (e.g., 80%) is reached.
-
-III. Expense Entry and Management:
-Users MUST be able to add, edit, and delete expenses with details such as description, amount, category, and date.
-Expense data MUST be validated for correctness and completeness before being saved.
-Deleting an expense MUST adjust the budget to reflect the updated balance.
-
-IV. Visual Expense Representation:
-The app MUST include a bar graph that shows total expenses for each day of the week.
-The bar graph MUST update in real-time when expenses are added or edited.
-Data visualization SHOULD clearly display expense amounts and labels for each day of the week.
-
-V. Dark/Light Mode Support:
-The app MUST provide a toggle option for switching between dark and light themes.
-The UI SHOULD maintain a consistent, user-friendly experience in both modes.
-
-VI. Expense Categories and Filtering:
-Users MUST be able to categorize expenses and filter them by category or date.
-The filtering system MUST be efficient and return accurate results.
-The app SHOULD enable users to view expenses based on specific filters for better tracking and analysis.
 
 
 ### 4. System Analysis
