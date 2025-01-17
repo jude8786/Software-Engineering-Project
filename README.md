@@ -184,11 +184,31 @@ Copilot assisted in generating intricate algorithms for filtering and sorting da
 Helped me add images to my catergories for the different expenses.
 
 
-14. DSL Implementation
-Included a demonstration of a Domain-Specific Language snippet in the project.
+![Image](https://github.com/user-attachments/assets/54b226ef-dc37-416b-8a41-4b7d66f56587)
 
-15. Functional Programming
-Demonstrated the use of functional programming aspects such as side-effect-free functions, closures, and higher-order functions.
+![Image](https://github.com/user-attachments/assets/8fb4bd07-45b9-41c8-b9c8-6701e1b62e01)
+
+![Image](https://github.com/user-attachments/assets/67d779df-dc7a-4070-8d51-55fb3392ac45)
+
+Copilot really helped me implement the images into my project as I was struggling to figure out how to add it to my project. It make my life easier by showing me how to add it and using my code to implement it. I will be using this feature mor often in the future.
+
+14. **FUNCTIONAL PROGRAMMING:** prove that you have covered all functional aspects in your code as:
+    - only final data structures
+    - (mostly) side-effect-free functions
+    - the use of higher-order functions
+    - functions as parameters and return values
+    - use closures / anonymous functions
+    
+    You can also do it outside of your project. Even in other languages such as F#, Clojure, Julia, etc.
+
+
+
+
+
+
+
+
+
 
 🏆 Bonus
 Set up and documented an AI-powered coding environment.
