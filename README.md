@@ -181,14 +181,7 @@ Github Copilot was simple to get started and it immediately
 
 Enhance Efficiency in Complex Logic:
 Copilot assisted in generating intricate algorithms for filtering and sorting data, which would have taken more time to write manually.
-
-Speed Up API Integration:
-It provided boilerplate code for integrating REST APIs, reducing development time.
-
-Improve Debugging:
-The suggestions included better error-handling mechanisms, which streamlined my debugging process and made the code more resilient.
-
-
+Helped me add images to my catergories for the different expenses.
 
 
 14. DSL Implementation
