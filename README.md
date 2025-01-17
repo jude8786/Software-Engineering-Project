@@ -34,7 +34,27 @@ Use Case Diagram
 
 
 3. Requirements Documentation
+Simple Tool Trello
 
+Requirements in the begining 
+
+![Image](https://github.com/user-attachments/assets/1dcc0e34-4049-4a64-b2fb-fb1b3de20878)
+
+
+Requirements currently
+
+[Expense Tracker Requirements- Trello tool](https://trello.com/invite/b/6789867899c4728f8e4a732f/ATTIcff9c7eae0a753f74e7ad8290f92e3007D121905/expense-tracker)
+
+
+Professional Tool Jira
+
+Requirements in the begining
+
+
+![Image](https://github.com/user-attachments/assets/437faed0-1bb5-42d9-9fd9-bfbd24cb130f)
+
+Requirements currently
+![Image](https://github.com/user-attachments/assets/6bd789bb-996d-41a6-afca-cb7877cf3861)
 
 
 ### 4. System Analysis
@@ -152,6 +172,24 @@ Ctrl + Shift + M: Open the Problems tab to view errors and warnings across the p
 Ctrl + Shift + T: Reopen a recently closed file in your workspace.
 Shift + Alt + Right/Left Arrow: Expand or shrink the selection scope (e.g., to select a widget or method).
 Ctrl + ` (Backtick): Quickly open or hide the integrated terminal.
+
+13. AI Coding: Set Up an AI-coding environment on your computer like ZED, Aider, free Cursor / Windsurf programs, etc. Show your steps and personal experiences! 
+I chose GitHub Copilot as my AI coding assistant because of its ability to understand the context of my project. It provides not just code snippets but also logical suggestions tailored to the structure of my application. Its versatility across different languages and frameworks makes it a robust tool for diverse coding tasks.
+
+Personal Experience
+Github Copilot was simple to get started and it immediately
+
+Enhance Efficiency in Complex Logic:
+Copilot assisted in generating intricate algorithms for filtering and sorting data, which would have taken more time to write manually.
+
+Speed Up API Integration:
+It provided boilerplate code for integrating REST APIs, reducing development time.
+
+Improve Debugging:
+The suggestions included better error-handling mechanisms, which streamlined my debugging process and made the code more resilient.
+
+
+
 
 14. DSL Implementation
 Included a demonstration of a Domain-Specific Language snippet in the project.
