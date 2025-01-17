@@ -100,7 +100,11 @@ Conducted event-storming to discover relevant domains and charted these domains 
 7. Metrics
 Included project metrics such as SonarQube analysis and additional non-trivial metrics.
 
-8. Clean Code Development (CCD)
+I used Dart's linter to ensure the codebase adheres to industry best practices and maintains a high standard of quality throughout the development process. Dart's linter is a powerful tool that helps identify potential issues and encourages clean, efficient, and maintainable code.
+
+
+
+9. Clean Code Development (CCD)
 Demonstrated at least 5 clean code practices in the codebase, with explanations for why they are considered clean. Attached a personal CCD cheat sheet (PDF) with >10 points.
 
 Single Responsibility Principle
