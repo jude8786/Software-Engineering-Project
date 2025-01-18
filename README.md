@@ -113,7 +113,7 @@ My issues throughout my project
 
 
 
-8. Clean Code Development (CCD)
+7. Clean Code Development (CCD)
 Demonstrated at least 5 clean code practices in the codebase, with explanations for why they are considered clean. Attached a personal CCD cheat sheet (PDF) with >10 points.
 
 Single Responsibility Principle
@@ -155,110 +155,75 @@ Added a confirmation dialog before deleting an expense to provide better user fe
 8. REFACTORING: Show me two (non-trivial) Refactoring Examples of your code! Showing the original content and the refactored code! Explain what happened, why and how it has improved! Again: do not send me pure AI work!
 
 Original Code
+Here’s the current validation logic embedded in the Add Expense Screen
 
-Issues
-Repetition: The logic for building each transaction card was repeated for every item in the list.
-Limited Reusability: If a similar card UI was needed elsewhere, you’d have to duplicate the code.
-Readability: The method was cluttered, mixing UI layout with list logic, making it harder to understand.
-
-## Transaction List Widget
-
-This widget dynamically generates a transaction list displaying expense details like amount, title, category, and date. Each entry also includes a delete button.
 
 ```dart
-Widget _buildTransactionList() {
-  return ListView.builder(
-    itemCount: widget.expenses.length,
-    itemBuilder: (ctx, index) {
-      final expense = widget.expenses[index];
-      return Card(
-        elevation: 3,
-        margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-        child: ListTile(
-          leading: CircleAvatar(
-            radius: 30,
-            backgroundColor: Colors.teal,
-            child: Padding(
-              padding: const EdgeInsets.all(6),
-              child: FittedBox(
-                child: Text('\$${expense.amount.toStringAsFixed(2)}'),
-              ),
-            ),
-          ),
-          title: Text(
-            expense.title,
-            style: const TextStyle(fontWeight: FontWeight.bold),
-          ),
-          subtitle: Text(
-            '${expense.category} - ${DateFormat.yMMMd().format(expense.date)}',
-          ),
-          trailing: IconButton(
-            icon: const Icon(Icons.delete, color: Colors.red),
-            onPressed: () => _deleteExpense(index),
-          ),
-        ),
-      );
-    },
-  );
+if (titleController.text.isEmpty) {
+  showErrorDialog(context, 'Title is required.');
+  return;
+}
+
+if (amountController.text.isEmpty || double.tryParse(amountController.text) == null) {
+  showErrorDialog(context, 'Valid amount is required.');
+  return;
+}
+```
+Issues
+Duplication: The same validation logic might be repeated for other fields across screens.
+Mixed Concerns: Validation logic is directly embedded in the UI logic, which makes the code harder to read.
+
+
+Refactored Code
+Refactored the validation logic into a reusable method in the same file to ensure no new darts are introduced.
+
+
+```dart
+String? validateInput(String value, String fieldName, {bool isAmount = false}) {
+  if (value.isEmpty) {
+    return '$fieldName is required.';
+  }
+  if (isAmount && double.tryParse(value) == null) {
+    return 'Valid $fieldName is required.';
+  }
+  return null;
 }
 ```
 
-Refactored Code
-
-How It Was Fixed
-Created a reusable TransactionCard widget to handle the card UI.
-Simplified _buildTransactionList() by delegating the card-building logic to TransactionCard.
+Original Code
+This snippet handles the logic for deleting an expense and adjusting the budget in the HomeScreen.
 
 
 ```dart
-Widget _buildTransactionList() {
-  return ListView.builder(
-    itemCount: widget.expenses.length,
-    itemBuilder: (ctx, index) {
-      final expense = widget.expenses[index];
-      return TransactionCard(
-        expense: expense,
-        onDelete: () => _deleteExpense(index),
-      );
-    },
-  );
+void _deleteExpense(int index) {
+  final double amount = widget.expenses[index].amount;
+  setState(() {
+    widget.expenses.removeAt(index);
+    widget.budget.remainingAmount += amount;
+  });
+}
+```
+Refactored Code
+Refactor the logic into two separate methods: one for deleting the expense and another for adjusting the budget.
+
+
+```dart
+void _deleteExpense(int index) {
+  final double amount = widget.expenses[index].amount;
+  _removeExpenseAtIndex(index);
+  _adjustBudget(amount);
 }
 
-class TransactionCard extends StatelessWidget {
-  final Expense expense;
-  final VoidCallback onDelete;
+void _removeExpenseAtIndex(int index) {
+  setState(() {
+    widget.expenses.removeAt(index);
+  });
+}
 
-  const TransactionCard({
-    Key? key,
-    required this.expense,
-    required this.onDelete,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      elevation: 3,
-      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-      child: ListTile(
-        leading: CircleAvatar(
-          radius: 30,
-          backgroundColor: Colors.teal,
-          child: Padding(
-            padding: const EdgeInsets.all(6),
-            child: FittedBox(
-              child: Text('\$${expense.amount.toStringAsFixed(2)}'),
-            ),
-          ),
-        ),
-        title: Text(expense.title, style: const TextStyle(fontWeight: FontWeight.bold)),
-        subtitle: Text('${expense.category} - ${DateFormat.yMMMd().format(expense.date)}'),
-        trailing: IconButton(
-          icon: const Icon(Icons.delete, color: Colors.red),
-          onPressed: onDelete,
-        ),
-      ),
-    );
-  }
+void _adjustBudget(double amount) {
+  setState(() {
+    widget.budget.remainingAmount += amount;
+  });
 }
 ```
 
@@ -268,6 +233,8 @@ Employed a build tool (e.g., Maven or Gradle) to automate processes like documen
 
 10. Continuous Delivery
 Implemented a CI/CD pipeline using tools like GitHub Actions, with at least two automated scripts.
+
+
 
 11. Unit Tests
 Integrated comprehensive unit tests within the codebase.
