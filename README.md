@@ -162,9 +162,6 @@ Limited Reusability: If a similar card UI was needed elsewhere, you’d have to 
 Readability: The method was cluttered, mixing UI layout with list logic, making it harder to understand.
 
 
-## Transaction List Widget
-
-This widget dynamically generates a transaction list displaying expense details like amount, title, category, and date. Each entry also includes a delete button.
 
 ## Transaction List Widget
 
