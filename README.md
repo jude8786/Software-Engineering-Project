@@ -201,7 +201,7 @@ Widget _buildTransactionList() {
     },
   );
 }
-
+```
 
 Refactored Code
 
