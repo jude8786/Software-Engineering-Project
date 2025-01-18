@@ -196,7 +196,7 @@ Widget _buildTransactionList() {
       );
     },
   );
-}```
+}dart```
 
 Refactored Code
 
