@@ -166,6 +166,10 @@ Readability: The method was cluttered, mixing UI layout with list logic, making 
 
 This widget dynamically generates a transaction list displaying expense details like amount, title, category, and date. Each entry also includes a delete button.
 
+## Transaction List Widget
+
+This widget dynamically generates a transaction list displaying expense details like amount, title, category, and date. Each entry also includes a delete button.
+
 ```dart
 Widget _buildTransactionList() {
   return ListView.builder(
@@ -186,8 +190,13 @@ Widget _buildTransactionList() {
               ),
             ),
           ),
-          title: Text(expense.title, style: const TextStyle(fontWeight: FontWeight.bold)),
-          subtitle: Text('${expense.category} - ${DateFormat.yMMMd().format(expense.date)}'),
+          title: Text(
+            expense.title,
+            style: const TextStyle(fontWeight: FontWeight.bold),
+          ),
+          subtitle: Text(
+            '${expense.category} - ${DateFormat.yMMMd().format(expense.date)}',
+          ),
           trailing: IconButton(
             icon: const Icon(Icons.delete, color: Colors.red),
             onPressed: () => _deleteExpense(index),
@@ -196,7 +205,8 @@ Widget _buildTransactionList() {
       );
     },
   );
-}dart```
+}
+
 
 Refactored Code
 
