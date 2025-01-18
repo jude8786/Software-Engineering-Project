@@ -196,7 +196,7 @@ Widget _buildTransactionList() {
       );
     },
   );
-}
+}```
 
 Refactored Code
 
@@ -266,11 +266,7 @@ class TransactionCard extends StatelessWidget {
       ),
     );
   }
-}
-
-
-
-
+}```
 
 
 9. Build Management
