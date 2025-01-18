@@ -249,6 +249,11 @@ Employed a build tool (e.g., Maven or Gradle) to automate processes like documen
 
 10. Continuous Delivery
 Implemented a CI/CD pipeline using tools like GitHub Actions, with at least two automated scripts.
+Implemented a CI/CD pipeline using GitHub Actions with at least two automated scripts:
+
+Install dependencies.
+Run Tests
+Build the release APK.
 
 
 
