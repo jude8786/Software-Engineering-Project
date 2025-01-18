@@ -163,7 +163,25 @@ Implemented a CI/CD pipeline using tools like GitHub Actions, with at least two 
 11. Unit Tests
 Integrated comprehensive unit tests within the codebase.
 
-12. IDE Proficiency
+
+Home Screen Tests (home_screen_test.dart):
+
+Budget Overview Display: Verifies that the budget summary (Total Balance, Income, Expenses) is displayed accurately.
+Transaction List Display: Confirms that expense titles (e.g., "Dinner", "Taxi") are correctly rendered on the home screen.
+
+
+Add Expense Screen Tests (add_expense_screen_test.dart):
+
+Form Field Validation: Ensures proper validation of required fields and price input during expense creation.
+Transaction Addition: Tests that a new expense is added to the expense list and the budget is updated accordingly.
+
+
+
+
+
+
+
+13. IDE Proficiency
 Used a preferred IDE (e.g., VSCode or IntelliJ) and documented the favorite shortcuts and techniques.
 
 Key Features Used:
