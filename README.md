@@ -226,7 +226,23 @@ void _adjustBudget(double amount) {
   });
 }
 ```
-
+How These Changes Improved the Code
+Performance Optimization with const:
+Prevents unnecessary widget rebuilds, improving app performance.
+Reduces memory consumption by reusing immutable widgets.
+Ensures a smoother user experience, especially during state changes.
+Centralized Widget Constructor Parameters (Key? key):
+Enhances widget tree identification, particularly during testing.
+Improves maintainability by preparing the app for complex widget hierarchies.
+Simplifies debugging and testing of individual widgets.
+Improved Code Readability:
+Logical ordering of widget properties makes code easier to read and follow.
+Adherence to Dart's linting guidelines ensures standardized formatting.
+Simplifies the onboarding process for future developers.
+Error Validation and Messaging:
+Improved error feedback for incomplete expense details (e.g., empty fields or missing categories).
+Reduces user confusion by providing immediate feedback.
+Ensures consistent error handling across the app.
 
 9. Build Management
 Employed a build tool (e.g., Maven or Gradle) to automate processes like documentation generation and testing.
