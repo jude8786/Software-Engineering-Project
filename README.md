@@ -209,6 +209,8 @@ How It Was Fixed
 Created a reusable TransactionCard widget to handle the card UI.
 Simplified _buildTransactionList() by delegating the card-building logic to TransactionCard.
 
+
+```dart
 Widget _buildTransactionList() {
   return ListView.builder(
     itemCount: widget.expenses.length,
