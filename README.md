@@ -326,11 +326,78 @@ Copilot really helped me implement the images into my project as I was strugglin
     - the use of higher-order functions
     - functions as parameters and return values
     - use closures / anonymous functions
-    
-    You can also do it outside of your project. Even in other languages such as F#, Clojure, Julia, etc.
+ Final Data Structures
+Immutability:
+Using final ensures the data structures are not reassigned, reducing bugs caused by unintended mutations.
+
+```dart
+final List<Expense> expenses = [
+  Expense(id: '1', title: 'Coffee', amount: 3.5, category: 'Food'),
+  Expense(id: '2', title: 'Taxi', amount: 15.0, category: 'Transport'),
+];
+```
+
+Why this is functional:
+Once the expenses list is initialized, its reference cannot be reassigned.
+This avoids unintended side effects and makes the code immutable.
+
+Side-Effect-Free Functions
+
+Side-Effect-Free Functions:
+Functions like calculateTotalExpense are easier to test and debug because they don't depend on external state.
+
+```dart
+double calculateTotalExpense(List<Expense> expenses) {
+  return expenses.fold(0, (sum, expense) => sum + expense.amount);
+}
+```
+
+Why this is functional:
+The function doesn’t modify the input list (expenses) or rely on external variables.
+It is predictable and only computes the total based on its input.
 
 
+Higher-Order Functions
+Higher-Order Functions:
+Improve reusability and flexibility by allowing custom logic to be passed as arguments.
 
+
+```dart
+void applyDiscount(List<Expense> expenses, double Function(double) discount) {
+  for (var expense in expenses) {
+    expense.amount = discount(expense.amount);
+  }
+}
+```
+Why this is functional:
+applyDiscount takes a function (discount) as a parameter, which allows different discount strategies to be passed dynamically.
+
+4. Functions as Parameters and Return Values
+Functions as Parameters/Return Values:
+Enables dynamic behavior and composition, making the code more modular and reusable.
+
+```dart
+Function calculateRemainingBudget(double budget) {
+  return (double expenses) => budget - expenses;
+}
+```
+
+Why this is functional:
+The calculateRemainingBudget function returns a closure that calculates the remaining budget based on the input expenses.
+This allows for flexibility and composition.
+
+
+5. Closures / Anonymous Functions
+Closures/Anonymous Functions:
+Simplify logic by encapsulating behavior directly within higher-order functions like where.
+
+```dart
+List<Expense> filterExpenses(List<Expense> expenses, String category) {
+  return expenses.where((expense) => expense.category == category).toList();
+}
+```
+Why this is functional:
+The anonymous function (expense) => expense.category == category is a closure because it captures the category variable from its surrounding scope.
 
 
 
