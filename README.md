@@ -152,6 +152,125 @@ Removed repetitive expenses.isEmpty logic by creating a reusable private _buildE
 User Feedback:
 Added a confirmation dialog before deleting an expense to provide better user feedback and prevent accidental deletions.
 
+8. REFACTORING: Show me two (non-trivial) Refactoring Examples of your code! Showing the original content and the refactored code! Explain what happened, why and how it has improved! Again: do not send me pure AI work!
+
+Original Code
+
+Issues
+Repetition: The logic for building each transaction card was repeated for every item in the list.
+Limited Reusability: If a similar card UI was needed elsewhere, you’d have to duplicate the code.
+Readability: The method was cluttered, mixing UI layout with list logic, making it harder to understand.
+
+
+## Transaction List Widget
+
+This widget dynamically generates a transaction list displaying expense details like amount, title, category, and date. Each entry also includes a delete button.
+
+```dart
+Widget _buildTransactionList() {
+  return ListView.builder(
+    itemCount: widget.expenses.length,
+    itemBuilder: (ctx, index) {
+      final expense = widget.expenses[index];
+      return Card(
+        elevation: 3,
+        margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+        child: ListTile(
+          leading: CircleAvatar(
+            radius: 30,
+            backgroundColor: Colors.teal,
+            child: Padding(
+              padding: const EdgeInsets.all(6),
+              child: FittedBox(
+                child: Text('\$${expense.amount.toStringAsFixed(2)}'),
+              ),
+            ),
+          ),
+          title: Text(expense.title, style: const TextStyle(fontWeight: FontWeight.bold)),
+          subtitle: Text('${expense.category} - ${DateFormat.yMMMd().format(expense.date)}'),
+          trailing: IconButton(
+            icon: const Icon(Icons.delete, color: Colors.red),
+            onPressed: () => _deleteExpense(index),
+          ),
+        ),
+      );
+    },
+  );
+}
+
+Refactored Code
+
+How It Was Fixed
+Created a reusable TransactionCard widget to handle the card UI.
+Simplified _buildTransactionList() by delegating the card-building logic to TransactionCard.
+
+## Transaction List and Card Widgets
+
+The transaction list has been refactored to improve readability and reusability. The `TransactionCard` widget separates the logic for each individual transaction into its own reusable component.
+
+### Code Implementation
+
+```dart
+// Transaction List Widget
+Widget _buildTransactionList() {
+  return ListView.builder(
+    itemCount: widget.expenses.length,
+    itemBuilder: (ctx, index) {
+      final expense = widget.expenses[index];
+      return TransactionCard(
+        expense: expense,
+        onDelete: () => _deleteExpense(index),
+      );
+    },
+  );
+}
+
+// Transaction Card Widget
+class TransactionCard extends StatelessWidget {
+  final Expense expense;
+  final VoidCallback onDelete;
+
+  const TransactionCard({
+    Key? key,
+    required this.expense,
+    required this.onDelete,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 3,
+      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+      child: ListTile(
+        leading: CircleAvatar(
+          radius: 30,
+          backgroundColor: Colors.teal,
+          child: Padding(
+            padding: const EdgeInsets.all(6),
+            child: FittedBox(
+              child: Text('\$${expense.amount.toStringAsFixed(2)}'),
+            ),
+          ),
+        ),
+        title: Text(
+          expense.title,
+          style: const TextStyle(fontWeight: FontWeight.bold),
+        ),
+        subtitle: Text(
+          '${expense.category} - ${DateFormat.yMMMd().format(expense.date)}',
+        ),
+        trailing: IconButton(
+          icon: const Icon(Icons.delete, color: Colors.red),
+          onPressed: onDelete,
+        ),
+      ),
+    );
+  }
+}
+
+
+
+
 
 
 9. Build Management
