@@ -29,11 +29,21 @@ class _BudgetScreenState extends State<BudgetScreen> {
     super.dispose();
   }
 
+  /// Validates and parses the budget input
+  double? _validateAndParseBudget(String input) {
+    final parsedBudget = double.tryParse(input);
+    if (parsedBudget == null || parsedBudget < 0) {
+      return null;
+    }
+    return parsedBudget;
+  }
+
+  /// Handles submitting the budget
   void _submitBudget() {
     final input = _budgetController.text;
-    final newBudget = double.tryParse(input);
+    final newBudget = _validateAndParseBudget(input);
 
-    if (newBudget == null || newBudget < 0) {
+    if (newBudget == null) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text('Please enter a valid budget amount.'),
@@ -44,6 +54,12 @@ class _BudgetScreenState extends State<BudgetScreen> {
     }
 
     widget.setBudget(newBudget);
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text('Budget updated successfully!'),
+        backgroundColor: Colors.green,
+      ),
+    );
     Navigator.pop(context);
   }
 

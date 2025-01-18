@@ -25,7 +25,8 @@ dev_dependencies:
   flutter_lints: ^2.0.0 # Recommended lints for better coding practices
 
 
-  test_api: 0.7.2
+  test_api: 0.7.3
+  
 
 
 flutter:
