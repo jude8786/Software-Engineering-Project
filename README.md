@@ -471,7 +471,12 @@ List<Expense> filterExpenses(List<Expense> expenses, String category) {
 Why this is functional:
 The anonymous function (expense) => expense.category == category is a closure because it captures the category variable from its surrounding scope.
 
+---
 
+### My Experience with this project
+
+
+Working on this project has been an incredible learning experience, allowing me to explore and apply various aspects of software engineering and mobile app development. I gained hands-on experience with Flutter, learning how to create dynamic and responsive UIs while managing state effectively. Implementing clean code principles, such as the Single Responsibility Principle and DRY (Don't Repeat Yourself), helped me write more maintainable and scalable code. I also delved into functional programming concepts like immutability, higher-order functions, and closures, which improved the efficiency and readability of my code. Setting up a CI/CD pipeline with GitHub Actions and using Gradle for build management gave me insight into automating testing, building, and deployment processes, which streamlined the workflow. One of the most challenging yet rewarding parts was debugging issues like asset management and form validation, which strengthened my problem-solving skills. I thoroughly enjoyed designing the user interface, particularly adding images to expense categories to make the app more visually engaging. Testing the application with unit tests and exploring tools like GitHub Copilot further enriched my development experience. Overall, this project not only honed my technical skills but also taught me the importance of organization, attention to detail, and persistence in overcoming challenges. It has been a fulfilling journey, and I am excited to apply these learnings to future projects.
 
 
 
