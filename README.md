@@ -336,7 +336,7 @@ Integrated comprehensive **unit tests** within the codebase to ensure robustness
 
 ---
 
-## 13. IDE Proficiency
+## 12. IDE Proficiency
 - Used a preferred IDE (**VSCode**) and documented favorite shortcuts and techniques for efficient development.
 
 ### Key Features Used:
@@ -361,7 +361,7 @@ Integrated comprehensive **unit tests** within the codebase to ensure robustness
 
 ---
 
-## 14. AI Coding
+## 13. AI Coding
 - Set up an AI-coding environment on my computer using **GitHub Copilot** due to its ability to:
   - Understand the context of my project.
   - Provide logical suggestions tailored to the structure of my application.
