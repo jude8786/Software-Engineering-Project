@@ -162,7 +162,7 @@ This project demonstrates clean code practices with examples and explanations. B
 
 ---
 
-## [CCD Cheat Sheet]
+## [CCD Cheat Sheet](https://github.com/jude8786/Software-Engineering-Project/blob/master/Clean_Code_Cheat_Sheet.pdf)
 A personal CCD cheat sheet (PDF) with over 10 points is attached to this project. The cheat sheet covers essential practices for writing clean, maintainable, and scalable code.
 
 ---
