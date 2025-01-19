@@ -1,65 +1,71 @@
-🔍 Project Objective and Motivation
-A) Objective
-Develop a small pet project as a way to re-engage with coding. This project, shared on GitHub, will be simple (e.g., a console-based game) and accompanied by concise documentation.
 
-Motivation
-I've realized that one of the toughest parts of financial management isn't just adhering to a budget but understanding where my money actually goes. Countless times, I’ve found myself sifting through bank statements, notes, and forgotten receipts to piece together my monthly expenses. This chaotic process made budgeting difficult and often led to overspending without any clear insights.
+# Expense Tracker Application 🛠️💰
 
-With this app, I aimed to make financial tracking straightforward, helping myself and others stay organized and on budget. Now, instead of relying on scattered notes and receipts, I can view my finances in a clear, comprehensive way. This project also serves as a tool for others who want to set up their own expense tracking systems and better understand their spending habits.
+A Flutter-based project aimed at simplifying financial tracking and budget management. This project not only helps users stay organized with their finances but also showcases my learning journey and technical expertise.
+
+---
+
+## 🔍 Project Objective and Motivation
+
+### Objective
+Develop a small pet project as a way to re-engage with coding. This project, shared on GitHub, is designed to be simple and accompanied by concise documentation.
+
+### Motivation
+Managing finances isn’t just about adhering to a budget—it's also about understanding where your money goes. The chaotic process of piecing together bank statements, notes, and forgotten receipts makes budgeting difficult and often leads to overspending without clear insights.
+
+With this app, financial tracking becomes straightforward. Users can view their finances clearly and comprehensively, reducing reliance on scattered notes and receipts. This project also serves as a tool for others looking to set up their own expense tracking systems and understand their spending habits.
 
 Traditional methods, like notebooks and spreadsheets, were cumbersome and prone to errors. While there are various budgeting apps available, I wanted to create a customized solution that met my specific needs and provided instant clarity.
 
-📝 Detailed Project Checklist
-Below is a checklist addressing each of the points outlined in the learning objectives, with explanations.
+---
 
-1. Use and Understand GIT
-Basic Git commands were used throughout the project, including branching, merging, and experimenting with time travel techniques.
+## 📝 Detailed Project Checklist
 
-2. UML Diagrams
-Created at least three different UML diagrams: Use Case, Component, and Class Diagrams, exported for easy viewing.
+### 1. Use and Understand Git
+Basic Git commands such as branching, merging, and time-travel techniques were used throughout the project.
 
+---
 
+### 2. UML Diagrams
+Created three different UML diagrams: **Use Case**, **Component**, and **Class Diagrams**.
 
-Class Diagram
+#### Class Diagram
 ![Corrected_Simple_Colored_Expense_Tracker_Class_Diagram](https://github.com/user-attachments/assets/995dfb30-9010-47b4-bc77-8ca518d9b9b1)
 
-
-Activity Diagram
+#### Activity Diagram
 ![Screenshot (186)](https://github.com/user-attachments/assets/b9df1cb9-d0c9-463c-b711-a230b47b6bb9)
 
-
-Use Case Diagram
+#### Use Case Diagram
 ![Screenshot (189)](https://github.com/user-attachments/assets/43c2f83a-c07f-4f54-a9ea-6e6527d012aa)
 
+---
 
+### 3. Requirements Documentation
 
-3. Requirements Documentation
-Simple Tool Trello
+#### Trello (Simple Tool)
 
-Requirements in the begining 
+- **Initial Requirements:**
 
 ![Image](https://github.com/user-attachments/assets/1dcc0e34-4049-4a64-b2fb-fb1b3de20878)
 
+- **Current Requirements:**
+[Expense Tracker Requirements - Trello Board](https://trello.com/invite/b/6789867899c4728f8e4a732f/ATTIcff9c7eae0a753f74e7ad8290f92e3007D121905/expense-tracker)
 
-Requirements currently
+#### Jira (Professional Tool)
 
-[Expense Tracker Requirements- Trello tool](https://trello.com/invite/b/6789867899c4728f8e4a732f/ATTIcff9c7eae0a753f74e7ad8290f92e3007D121905/expense-tracker)
-
-
-Professional Tool Jira
-
-Requirements in the begining
-
+- **Initial Requirements:**
 
 ![Image](https://github.com/user-attachments/assets/437faed0-1bb5-42d9-9fd9-bfbd24cb130f)
 
-Requirements currently
+- **Current Requirements:**
+
 ![Image](https://github.com/user-attachments/assets/6bd789bb-996d-41a6-afca-cb7877cf3861)
 
+---
 
 ### 4. System Analysis
 
-#### Checklist for Analysis:
+#### Analysis Checklist:
 - [ ] Problem Definition
 - [ ] Target Audience
 - [ ] Unique Selling Proposition (USP)
@@ -76,41 +82,35 @@ Requirements currently
 - [ ] Innovation Potential
 - [ ] Future Expansion
 
-The detailed pdf file is in the link below
-[PDF File](https://github.com/jude8786/Software-Engineering-Project/blob/master/Expense%20Tracker%20Project%20Analysis%20Checklist.pdf)
+[📄 Detailed Analysis PDF](https://github.com/jude8786/Software-Engineering-Project/blob/master/Expense%20Tracker%20Project%20Analysis%20Checklist.pdf)
 
-5. Domain-Driven Design (DDD)
-Conducted event-storming to discover relevant domains and charted these domains into a Core Domain Chart, illustrating their relationships and mappings.
+---
 
+### 5. Domain-Driven Design (DDD)
+Conducted event-storming to discover relevant domains and created a **Core Domain Chart** illustrating their relationships and mappings.
+
+#### Domain Charts:
 ![Screenshot (358)](https://github.com/user-attachments/assets/595ba08b-9aeb-4701-9aae-9f51982784b7)
-
 
 ![Screenshot (211)](https://github.com/user-attachments/assets/ea6527f6-d9c3-415a-9f83-1388b793e4d2)
 
-
-
 ![Screenshot (212)](https://github.com/user-attachments/assets/b2875f14-24ec-43e8-bfb0-9b92e3b2b959)
-
-
 
 ![Screenshot (356)](https://github.com/user-attachments/assets/e562d150-c262-4de4-bf5c-4da60dc69c93)
 
+---
 
+### 6. Metrics
+Used **Dart’s linter** to ensure the code adheres to industry best practices, maintaining a clean and efficient codebase.
 
-6. Metrics
-Included project metrics such as SonarQube analysis and additional non-trivial metrics.
-
-I used Dart's linter to ensure the codebase adheres to industry best practices and maintains a high standard of quality throughout the development process. Dart's linter is a powerful tool that helps identify potential issues and encourages clean, efficient, and maintainable code.
-
-My issues throughout my project
-
+#### Project Metrics:
 ![Image](https://github.com/user-attachments/assets/cf9c1dbb-ccd5-433e-81dd-f0a0a5077670)
 
 ![Image](https://github.com/user-attachments/assets/abdc880d-7d5f-45d6-aba9-9935cbf29430)
 
 ![Image](https://github.com/user-attachments/assets/c21f63cc-ad10-4445-b3a6-af5c11acb6b5)
 
-
+---
 
 
 7. Clean Code Development (CCD)
