@@ -307,6 +307,8 @@ This refactor applies the DRY (Don’t Repeat Yourself) principle by replacing r
   - Reduces user confusion by providing immediate feedback.
   - Ensures consistent error handling across the app.
 
+---
+
 ## 9. Build Management
 - Employed a build tool (e.g., **Gradle**) to automate processes like:
   - **Documentation generation**
