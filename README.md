@@ -478,10 +478,3 @@ The anonymous function (expense) => expense.category == category is a closure be
 
 
 
-🏆 Bonus
-Set up and documented an AI-powered coding environment.
-
-⚠️ Submission Reminder
-Ensure all related documents, code snippets, and screenshots are accessible and organized within the README. The project and documentation aim to share personal experiences and practical insights gained during the process.
-
-Submit only a public link to your GitHub repository in Moodle for evaluation. Repositories should remain public until grading is complete, then may be switched to private.
