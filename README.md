@@ -168,8 +168,6 @@ A personal CCD cheat sheet (PDF) with over 10 points is attached to this project
 ---
 
 
-User Feedback:
-Added a confirmation dialog before deleting an expense to provide better user feedback and prevent accidental deletions.
 
 8. REFACTORING: Show me two (non-trivial) Refactoring Examples of your code! Showing the original content and the refactored code! Explain what happened, why and how it has improved! Again: do not send me pure AI work!
 
