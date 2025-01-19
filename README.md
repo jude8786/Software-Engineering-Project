@@ -112,41 +112,60 @@ Used **Dart’s linter** to ensure the code adheres to industry best practices, 
 
 ---
 
+# Clean Code Development (CCD)
 
-7. Clean Code Development (CCD)
-Demonstrated at least 5 clean code practices in the codebase, with explanations for why they are considered clean. Attached a personal CCD cheat sheet (PDF) with >10 points.
+This project demonstrates clean code practices with examples and explanations. Below are the practices implemented in the codebase, along with their benefits.
 
-Single Responsibility Principle
-Update: The _deleteExpense logic is extracted into a separate private method to handle budget updates, ensuring the _deleteExpense method focuses only on removing the expense.
+---
 
-Readable Names
-Update: Renamed _buildHomeTab to _buildTransactionOverviewTab for better clarity about its purpose.
+## Clean Code Practices
 
+### 1. Single Responsibility Principle
+**Update:** The `_deleteExpense` logic was extracted into a separate private method to handle budget updates. This ensures the `_deleteExpense` method focuses only on removing the expense.
 
+**Example:**
+- `BudgetScreen` only manages budget operations instead of mixing transaction logic.
 
-Single Responsibility Principle
+---
 
-Example: BudgetScreen only manages budget operations instead of mixing transaction logic.
-Readable Names
+### 2. Readable Names
+**Update:** Renamed `_buildHomeTab` to `_buildTransactionOverviewTab` for better clarity about its purpose.
 
-Updated _buildHomeTab to have meaningful and structured widgets like _buildBudgetOverview and _buildTransactionList.
-Encapsulation
+**Example:**
+- Updated `_buildHomeTab` to have meaningful and structured widgets like `_buildBudgetOverview` and `_buildTransactionList`.
 
-State variables like _selectedIndex and _expenses are private to HomeScreen or ExpenseTrackerAppState to avoid external modifications.
-DRY Principle
+---
 
-Encapsulation:
-Encapsulated the input validation logic within a private _validateAndParseBudget method. This method now handles both validation and parsing, ensuring the rest of the code doesn’t worry about these details.
-_validateAndParseBudget encapsulates validation and parsing, which keeps the main _submitBudget method focused on handling the user action.
+### 3. Encapsulation
+**Update:**
+- State variables like `_selectedIndex` and `_expenses` are private to `HomeScreen` or `ExpenseTrackerAppState` to prevent external modifications.
 
+**Example:**
+- Encapsulated input validation logic within a private `_validateAndParseBudget` method. This method handles both validation and parsing, ensuring the rest of the code doesn’t need to worry about these details.
 
+---
 
-DRY Principle:
-Reused _validateAndParseBudget for both input validation and parsing, avoiding redundant validation checks in multiple places.
-Avoided duplicating validation logic in multiple places. The same _validateAndParseBudget method is reused wherever input validation is required.
+### 4. DRY (Don’t Repeat Yourself) Principle
+**Updates:**
+1. **Input Validation and Parsing:**
+   - Encapsulated in the `_validateAndParseBudget` method to avoid redundant validation checks across multiple places.
+   - This method is reused wherever input validation is required.
 
-DRY Principle:
-Removed repetitive expenses.isEmpty logic by creating a reusable private _buildEmptyMessage method.
+2. **Reusability:**
+   - Removed repetitive `expenses.isEmpty` logic by creating a reusable private `_buildEmptyMessage` method.
+
+---
+
+### 5. User Feedback
+**Update:**
+- Added a confirmation dialog before deleting an expense to provide better user feedback and prevent accidental deletions.
+
+---
+
+## [CCD Cheat Sheet]
+A personal CCD cheat sheet (PDF) with over 10 points is attached to this project. The cheat sheet covers essential practices for writing clean, maintainable, and scalable code.
+
+---
 
 
 User Feedback:
