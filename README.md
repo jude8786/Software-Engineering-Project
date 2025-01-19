@@ -327,11 +327,11 @@ This refactor applies the DRY (Don’t Repeat Yourself) principle by replacing r
 ## 11. Unit Tests
 Integrated comprehensive **unit tests** within the codebase to ensure robustness and reliability.
 
-### Home Screen Tests (`home_screen_test.dart`):
+### [Home Screen Tests](https://github.com/jude8786/Software-Engineering-Project/blob/master/Test/home_screen_test.dart) (`home_screen_test.dart`):
 - **Budget Overview Display**: Verifies that the budget summary (`Total Balance`, `Income`, `Expenses`) is displayed accurately.
 - **Transaction List Display**: Confirms that expense titles (e.g., "Dinner", "Taxi") are correctly rendered on the home screen.
 
-### Add Expense Screen Tests (`add_expense_screen_test.dart`):
+### [Add Expense Screen Tests](https://github.com/jude8786/Software-Engineering-Project/blob/master/Test/add_expense_screen_test.dart) (`add_expense_screen_test.dart`):
 - **Form Field Validation**: Ensures proper validation of required fields and price input during expense creation.
 - **Transaction Addition**: Tests that a new expense is added to the expense list and the budget is updated accordingly.
 
