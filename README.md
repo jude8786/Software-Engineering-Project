@@ -124,12 +124,14 @@ This project demonstrates clean code practices with examples and explanations. B
 **Update:** The `_deleteExpense` logic was extracted into a separate private method to handle budget updates. This ensures the `_deleteExpense` method focuses only on removing the expense.
 
 **Example:**
-- `BudgetScreen` only manages budget operations instead of mixing transaction logic.
+- [`BudgetScreen`](https://github.com/jude8786/Software-Engineering-Project/blob/master/lib/screens/budget_screen.dart
+) only manages budget operations instead of mixing transaction logic.
 
 ---
 
 ### 2. Readable Names
-**Update:** Renamed `_buildHomeTab` to `_buildTransactionOverviewTab` for better clarity about its purpose.
+**Update:** Renamed `_buildHomeTab` to [`_buildTransactionOverviewTab`](https://github.com/jude8786/Software-Engineering-Project/blob/master/lib/screens/budget_screen.dart
+) for better clarity about its purpose.
 
 **Example:**
 - Updated `_buildHomeTab` to have meaningful and structured widgets like `_buildBudgetOverview` and `_buildTransactionList`.
@@ -138,7 +140,8 @@ This project demonstrates clean code practices with examples and explanations. B
 
 ### 3. Encapsulation
 **Update:**
-- State variables like `_selectedIndex` and `_expenses` are private to `HomeScreen` or `ExpenseTrackerAppState` to prevent external modifications.
+- State variables like `_selectedIndex` and `_expenses` are private to `HomeScreen` or [`ExpenseTrackerAppState`](https://github.com/jude8786/Software-Engineering-Project/blob/master/lib/screens/expense_summary_screen.dart
+) to prevent external modifications.
 
 **Example:**
 - Encapsulated input validation logic within a private `_validateAndParseBudget` method. This method handles both validation and parsing, ensuring the rest of the code doesn’t need to worry about these details.
@@ -148,7 +151,7 @@ This project demonstrates clean code practices with examples and explanations. B
 ### 4. DRY (Don’t Repeat Yourself) Principle
 **Updates:**
 1. **Input Validation and Parsing:**
-   - Encapsulated in the `_validateAndParseBudget` method to avoid redundant validation checks across multiple places.
+   - Encapsulated in the [`_validateAndParseBudget](https://github.com/jude8786/Software-Engineering-Project/blob/master/lib/screens/expense_list_screen.dart)  method to avoid redundant validation checks across multiple places.
    - This method is reused wherever input validation is required.
 
 2. **Reusability:**
@@ -158,7 +161,9 @@ This project demonstrates clean code practices with examples and explanations. B
 
 ### 5. User Feedback
 **Update:**
-- Added a confirmation dialog before deleting an expense to provide better user feedback and prevent accidental deletions.
+- Added a confirmation dialog before [deleting an expense](
+https://github.com/jude8786/Software-Engineering-Project/blob/master/lib/screens/add_expense_screen.dart
+) to provide better user feedback and prevent accidental deletions.
 
 ---
 
