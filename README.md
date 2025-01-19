@@ -171,78 +171,119 @@ A personal CCD cheat sheet (PDF) with over 10 points is attached to this project
 
 8. REFACTORING: Show me two (non-trivial) Refactoring Examples of your code! Showing the original content and the refactored code! Explain what happened, why and how it has improved! Again: do not send me pure AI work!
 
-Original Code
-Here’s the current validation logic embedded in the Add Expense Screen
+# Refactoring Examples
 
+Below are two examples of code refactoring implemented in the project, along with explanations of the changes and their benefits.
 
-```dart
-if (titleController.text.isEmpty) {
-  showErrorDialog(context, 'Title is required.');
-  return;
-}
+---
 
-if (amountController.text.isEmpty || double.tryParse(amountController.text) == null) {
-  showErrorDialog(context, 'Valid amount is required.');
-  return;
-}
-```
-Issues
-Duplication: The same validation logic might be repeated for other fields across screens.
-Mixed Concerns: Validation logic is directly embedded in the UI logic, which makes the code harder to read.
+### Example 1: Centralizing Input Validation in AddExpenseScreen
 
-
-Refactored Code
-Refactored the validation logic into a reusable method in the same file to ensure no new darts are introduced.
-
+#### Original Code:
 
 ```dart
-String? validateInput(String value, String fieldName, {bool isAmount = false}) {
-  if (value.isEmpty) {
-    return '$fieldName is required.';
-  }
-  if (isAmount && double.tryParse(value) == null) {
-    return 'Valid $fieldName is required.';
-  }
-  return null;
+void _saveExpense() {
+    final title = _titleController.text;
+    final amount = double.tryParse(_amountController.text) ?? 0.0;
+
+    if (title.isEmpty || amount <= 0 || _selectedDate == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Please fill in all fields')),
+      );
+      return;
+    }
+
+    final newExpense = Expense(
+      id: DateTime.now().toString(),
+      title: title,
+      amount: amount,
+      category: _selectedCategory,
+      date: _selectedDate!,
+    );
+
+    setState(() {
+      widget.expenses.add(newExpense);
+      widget.updateBudget(amount);
+    });
+
+    Navigator.of(context).pop();
 }
 ```
-
-Original Code
-This snippet handles the logic for deleting an expense and adjusting the budget in the HomeScreen.
-
+#### Refactored Code:
 
 ```dart
-void _deleteExpense(int index) {
-  final double amount = widget.expenses[index].amount;
-  setState(() {
-    widget.expenses.removeAt(index);
-    widget.budget.remainingAmount += amount;
-  });
+bool _validateInputs() {
+    if (_titleController.text.isEmpty ||
+        double.tryParse(_amountController.text) == null ||
+        _selectedDate == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Please fill in all fields')),
+      );
+      return false;
+    }
+    return true;
+}
+
+void _saveExpense() {
+    if (!_validateInputs()) return;
+
+    final newExpense = Expense(
+      id: DateTime.now().toString(),
+      title: _titleController.text,
+      amount: double.parse(_amountController.text),
+      category: _selectedCategory,
+      date: _selectedDate!,
+    );
+
+    setState(() {
+      widget.expenses.add(newExpense);
+      widget.updateBudget(newExpense.amount);
+    });
+
+    Navigator.of(context).pop();
 }
 ```
-Refactored Code
-Refactor the logic into two separate methods: one for deleting the expense and another for adjusting the budget.
+---
 
+#### Why I Refactored:
+This change separates input validation into a dedicated _validateInputs method, adhering to the Single Responsibility Principle. It makes the _saveExpense method cleaner and focuses only on saving the expense. If input validation logic needs to be updated in the future, it can be done in one place.
+
+Example 2: Simplifying Category Total Calculation in ExpenseSummaryScreen
+
+---
+#### Original Code:
 
 ```dart
-void _deleteExpense(int index) {
-  final double amount = widget.expenses[index].amount;
-  _removeExpenseAtIndex(index);
-  _adjustBudget(amount);
-}
+Map<String, double> getCategoryTotals() {
+    final Map<String, double> categoryTotals = {};
 
-void _removeExpenseAtIndex(int index) {
-  setState(() {
-    widget.expenses.removeAt(index);
-  });
-}
+    for (var expense in expenses) {
+      if (categoryTotals.containsKey(expense.category)) {
+        categoryTotals[expense.category] =
+            categoryTotals[expense.category]! + expense.amount;
+      } else {
+        categoryTotals[expense.category] = expense.amount;
+      }
+    }
 
-void _adjustBudget(double amount) {
-  setState(() {
-    widget.budget.remainingAmount += amount;
-  });
+    return categoryTotals;
 }
 ```
+---
+#### Refactored Code:
+```dart
+Map<String, double> getCategoryTotals() {
+    return expenses.fold(<String, double>{}, (totals, expense) {
+      totals[expense.category] = (totals[expense.category] ?? 0) + expense.amount;
+      return totals;
+    });
+}
+```
+---
+
+####Why I Refactored:
+This refactor applies the DRY (Don’t Repeat Yourself) principle by replacing redundant logic with a functional approach using fold. The result is cleaner, more concise, and easier to maintain. If additional logic is needed for category totals in the future, this method is straightforward to update.
+
 How These Changes Improved the Code
 Performance Optimization with const:
 Prevents unnecessary widget rebuilds, improving app performance.
