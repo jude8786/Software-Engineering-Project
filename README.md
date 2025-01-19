@@ -312,6 +312,18 @@ This refactor applies the DRY (Don’t Repeat Yourself) principle by replacing r
 - Employed a build tool (e.g., **Gradle**) to automate processes like:
   - **Documentation generation**
   - **Testing**
+  ---
+## Key Files
+
+### [`build.gradle`](https://github.com/jude8786/Software-Engineering-Project/blob/master/android/build.gradle)
+Handles project-level configurations, including dependencies and build tasks.
+
+### [`settings.gradle`](https://github.com/jude8786/Software-Engineering-Project/blob/master/android/settings.gradle}
+Defines project structure and Gradle plugins.
+
+### [`gradle.properties`](https://github.com/jude8786/Software-Engineering-Project/blob/master/android/gradle.properties)
+Stores project-specific properties for improved manageability.
+
 
 ---
 
