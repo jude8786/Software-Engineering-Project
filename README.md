@@ -307,81 +307,89 @@ This refactor applies the DRY (Don’t Repeat Yourself) principle by replacing r
   - Reduces user confusion by providing immediate feedback.
   - Ensures consistent error handling across the app.
 
-9. Build Management
-Employed a build tool (e.g., Maven or Gradle) to automate processes like documentation generation and testing.
+## 9. Build Management
+- Employed a build tool (e.g., **Gradle**) to automate processes like:
+  - **Documentation generation**
+  - **Testing**
 
-10. Continuous Delivery
-Implemented a CI/CD pipeline using tools like GitHub Actions, with at least two automated scripts.
-Implemented a CI/CD pipeline using GitHub Actions with at least two automated scripts:
+---
 
-Install dependencies.
-Run Tests
-Build the release APK.
+## 10. Continuous Delivery
+- Implemented a CI/CD pipeline using **GitHub Actions** with at least two automated scripts:
+  1. Install dependencies.
+  2. Run Tests.
+  3. Build the release APK.
 
+---
 
+## 11. Unit Tests
+Integrated comprehensive **unit tests** within the codebase to ensure robustness and reliability.
 
-11. Unit Tests
-Integrated comprehensive unit tests within the codebase.
+### Home Screen Tests (`home_screen_test.dart`):
+- **Budget Overview Display**: Verifies that the budget summary (`Total Balance`, `Income`, `Expenses`) is displayed accurately.
+- **Transaction List Display**: Confirms that expense titles (e.g., "Dinner", "Taxi") are correctly rendered on the home screen.
 
+### Add Expense Screen Tests (`add_expense_screen_test.dart`):
+- **Form Field Validation**: Ensures proper validation of required fields and price input during expense creation.
+- **Transaction Addition**: Tests that a new expense is added to the expense list and the budget is updated accordingly.
 
-Home Screen Tests (home_screen_test.dart):
+---
 
-Budget Overview Display: Verifies that the budget summary (Total Balance, Income, Expenses) is displayed accurately.
-Transaction List Display: Confirms that expense titles (e.g., "Dinner", "Taxi") are correctly rendered on the home screen.
+## 13. IDE Proficiency
+- Used a preferred IDE (**VSCode**) and documented favorite shortcuts and techniques for efficient development.
 
+### Key Features Used:
+- **Extensions**:
+  - Flutter, Dart, Flutter Stylizer, GitLens
+- **Integrated Terminal**:
+  - Running `flutter pub get`, `flutter analyze`, and version control commands.
+- **Debugging**:
+  - Using the Flutter Inspector, examining widget trees, and stepping through code with breakpoints.
 
-Add Expense Screen Tests (add_expense_screen_test.dart):
+### Favorite Shortcuts:
+| Shortcut                  | Functionality                                                       |
+|---------------------------|---------------------------------------------------------------------|
+| **Ctrl + Shift + O**      | View and navigate to symbols (methods, classes) in the current file. |
+| **Alt + Shift + F10**     | Toggle between the Flutter Inspector and Debug Console during debugging. |
+| **Ctrl + Shift + K**      | Delete the current line of code.                                    |
+| **F6**                    | Rename a variable or method and refactor all occurrences in the project. |
+| **Ctrl + Shift + M**      | Open the Problems tab to view errors and warnings across the project. |
+| **Ctrl + Shift + T**      | Reopen a recently closed file in your workspace.                   |
+| **Shift + Alt + Arrow**   | Expand or shrink the selection scope (e.g., to select a widget or method). |
+| **Ctrl + ` (Backtick)**   | Quickly open or hide the integrated terminal.                      |
 
-Form Field Validation: Ensures proper validation of required fields and price input during expense creation.
-Transaction Addition: Tests that a new expense is added to the expense list and the budget is updated accordingly.
+---
 
+## 14. AI Coding
+- Set up an AI-coding environment on my computer using **GitHub Copilot** due to its ability to:
+  - Understand the context of my project.
+  - Provide logical suggestions tailored to the structure of my application.
+  - Versatility across different languages and frameworks.
 
+### Personal Experience:
+- **GitHub Copilot** was simple to set up and immediately enhanced my coding experience by:
+  - Assisting in **complex logic generation** (e.g., filtering and sorting data).
+  - Helping me add **images to categories** for different expenses.
 
+#### Example Contributions:
+1. Enhanced efficiency in creating algorithms for filtering and sorting expense data.
+2. Helped integrate images for expense categories to improve UI/UX.
 
-
-
-
-13. IDE Proficiency
-Used a preferred IDE (e.g., VSCode or IntelliJ) and documented the favorite shortcuts and techniques.
-
-Key Features Used:
-Extensions:
-Flutter, Dart, Flutter Stylizer, GitLens
-Integrated Terminal:
-Running flutter pub get, flutter analyze, and version control commands.
-Debugging:
-Using the Flutter Inspector, examining widget trees, and stepping through code with breakpoints.
-
-
-
-Favorite Shortcuts:
-Ctrl + Shift + O: View and navigate to symbols (methods, classes) in the current file.
-Alt + Shift + F10: Toggle between the Flutter Inspector and Debug Console during debugging.
-Ctrl + Shift + K: Delete the current line of code.
-F6: Rename a variable or method and refactor all occurrences in the project.
-Ctrl + Shift + M: Open the Problems tab to view errors and warnings across the project.
-Ctrl + Shift + T: Reopen a recently closed file in your workspace.
-Shift + Alt + Right/Left Arrow: Expand or shrink the selection scope (e.g., to select a widget or method).
-Ctrl + ` (Backtick): Quickly open or hide the integrated terminal.
-
-13. AI Coding: Set Up an AI-coding environment on your computer like ZED, Aider, free Cursor / Windsurf programs, etc. Show your steps and personal experiences! 
-I chose GitHub Copilot as my AI coding assistant because of its ability to understand the context of my project. It provides not just code snippets but also logical suggestions tailored to the structure of my application. Its versatility across different languages and frameworks makes it a robust tool for diverse coding tasks.
-
-Personal Experience
-Github Copilot was simple to get started and it immediately
-
-Enhance Efficiency in Complex Logic:
-Copilot assisted in generating intricate algorithms for filtering and sorting data, which would have taken more time to write manually.
-Helped me add images to my catergories for the different expenses.
-
-
+#### Screenshots:
 ![Image](https://github.com/user-attachments/assets/54b226ef-dc37-416b-8a41-4b7d66f56587)
-
 ![Image](https://github.com/user-attachments/assets/8fb4bd07-45b9-41c8-b9c8-6701e1b62e01)
-
 ![Image](https://github.com/user-attachments/assets/67d779df-dc7a-4070-8d51-55fb3392ac45)
 
-Copilot really helped me implement the images into my project as I was struggling to figure out how to add it to my project. It make my life easier by showing me how to add it and using my code to implement it. I will be using this feature mor often in the future.
+---
+
+### Reflection:
+- **Copilot** helped me implement images into my project when I struggled with the integration process.
+- It made my life easier by suggesting how to use my existing code for implementation.
+- I will continue using this tool for future improvements and efficiency in development.
+
+---
+
+
 
 14. **FUNCTIONAL PROGRAMMING:** prove that you have covered all functional aspects in your code as:
     - only final data structures
