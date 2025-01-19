@@ -25,30 +25,41 @@ class _AddExpenseScreenState extends State<AddExpenseScreen> {
   String _selectedCategory = 'Food';
   DateTime? _selectedDate;
 
-  final List<String> _categories = ['Food', 'Transport', 'Shopping', 'Utilities', 'Others'];
+  final List<String> _categories = ['Food', 'Transport', 'Health', 'Others'];
 
-  void _saveExpense() {
-    final title = _titleController.text;
-    final amount = double.tryParse(_amountController.text) ?? 0.0;
+  final Map<String, String> categoryImages = {
+    'Food': 'lib/assets/images/food.png',
+    'Transport': 'lib/assets/images/travel.png',
+    'Health': 'lib/assets/images/health.png',
+    'Others': 'lib/assets/images/other.png',
+  };
 
-    if (title.isEmpty || amount <= 0 || _selectedDate == null) {
+  bool _validateInputs() {
+    if (_titleController.text.isEmpty ||
+        double.tryParse(_amountController.text) == null ||
+        _selectedDate == null) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Please fill in all fields')),
       );
-      return;
+      return false;
     }
+    return true;
+  }
+
+  void _saveExpense() {
+    if (!_validateInputs()) return;
 
     final newExpense = Expense(
       id: DateTime.now().toString(),
-      title: title,
-      amount: amount,
+      title: _titleController.text,
+      amount: double.parse(_amountController.text),
       category: _selectedCategory,
       date: _selectedDate!,
     );
 
     setState(() {
       widget.expenses.add(newExpense);
-      widget.updateBudget(amount);
+      widget.updateBudget(newExpense.amount);
     });
 
     Navigator.of(context).pop();
@@ -91,12 +102,22 @@ class _AddExpenseScreenState extends State<AddExpenseScreen> {
             ),
             DropdownButtonFormField<String>(
               value: _selectedCategory,
-              items: _categories
-                  .map((category) => DropdownMenuItem(
-                        value: category,
-                        child: Text(category),
-                      ))
-                  .toList(),
+              items: _categories.map((category) {
+                return DropdownMenuItem(
+                  value: category,
+                  child: Row(
+                    children: [
+                      Image.asset(
+                        categoryImages[category]!,
+                        width: 24,
+                        height: 24,
+                      ),
+                      const SizedBox(width: 8),
+                      Text(category),
+                    ],
+                  ),
+                );
+              }).toList(),
               onChanged: (value) {
                 setState(() {
                   _selectedCategory = value!;

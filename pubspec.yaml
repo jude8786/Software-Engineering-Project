@@ -31,4 +31,8 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-
+  assets:
+    - lib/assets/food.png
+    - lib/assets/travel.png
+    - lib/assets/health.png
+    - lib/assets/other.png

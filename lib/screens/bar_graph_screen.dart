@@ -49,7 +49,7 @@ class BarGraphScreen extends StatelessWidget {
               ),
             ),
             borderData: FlBorderData(show: false),
-            gridData: FlGridData(show: false),
+            gridData: const FlGridData(show: false),
           ),
         ),
       ),

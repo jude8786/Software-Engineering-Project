@@ -1,4 +1,4 @@
-name: Flutter CI
+name: Flutter CI/CD Pipeline
 
 on:
   push:
@@ -10,28 +10,39 @@ on:
 
 jobs:
   build:
-    name: Flutter Build & Test
+    name: Build and Test Flutter Application
     runs-on: ubuntu-latest
 
     steps:
-    # Step 1: Checkout code
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      # Step 1: Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    # Step 2: Set up Flutter environment
-    - name: Install Flutter
-      uses: subosito/flutter-action@v2
-      with:
-        flutter-version: '<latest>'
+      # Step 2: Install Flutter
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.3.4'
 
-    # Step 3: Install dependencies
-    - name: Install dependencies
-      run: flutter pub get
+      # Step 3: Set up Dependencies
+      - name: Install dependencies
+        run: flutter pub get
 
-    # Step 4: Run analyzer (static code analysis)
-    - name: Run Flutter Analyze
-      run: flutter analyze
+      # Step 4: Run Tests
+      - name: Run Flutter tests
+        run: flutter test
 
-    # Step 5: Run tests
-    - name: Run Flutter Tests
-      run: flutter test
+      # Step 5: Analyze the Code
+      - name: Analyze code
+        run: flutter analyze
+
+      # Step 6: Build the APK
+      - name: Build APK
+        run: flutter build apk --release
+
+      # Step 7: Upload APK as an Artifact
+      - name: Upload APK
+        uses: actions/upload-artifact@v3
+        with:
+          name: app-release.apk
+          path: build/app/outputs/flutter-apk/app-release.apk

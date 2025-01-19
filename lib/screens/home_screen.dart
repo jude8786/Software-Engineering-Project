@@ -37,15 +37,20 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void _deleteExpense(int index) {
     final expenseAmount = widget.expenses[index].amount;
+    _removeExpense(index);
+    _updateRemainingBudget(expenseAmount);
+  }
+
+  void _removeExpense(int index) {
     setState(() {
       widget.expenses.removeAt(index);
-      _updateRemainingBudget(expenseAmount);
     });
   }
 
-  // New method for budget updates to adhere to Single Responsibility Principle
   void _updateRemainingBudget(double amount) {
-    widget.budget.remainingAmount += amount;
+    setState(() {
+      widget.budget.remainingAmount += amount;
+    });
   }
 
   List<Widget> _getTabWidgets() => [
@@ -56,7 +61,6 @@ class _HomeScreenState extends State<HomeScreen> {
         ExpenseListScreen(expenses: widget.expenses, onDelete: _deleteExpense),
       ];
 
-  // Renamed for better clarity (Readable Names)
   Widget _buildTransactionOverviewTab() => Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -94,12 +98,12 @@ class _HomeScreenState extends State<HomeScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  _buildBudgetDetail(
+                  BudgetDetail(
                     label: 'Income',
                     amount: widget.budget.initialAmount,
                     color: Colors.green,
                   ),
-                  _buildBudgetDetail(
+                  BudgetDetail(
                     label: 'Expenses',
                     amount: widget.budget.initialAmount - widget.budget.remainingAmount,
                     color: Colors.red,
@@ -110,13 +114,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       );
-
-  Widget _buildBudgetDetail({required String label, required double amount, required Color color}) {
-    return Text(
-      '$label: \$${amount.toStringAsFixed(2)}',
-      style: TextStyle(fontSize: 16, color: color),
-    );
-  }
 
   Widget _buildTransactionList() => ListView.builder(
         itemCount: widget.expenses.length,
@@ -193,6 +190,27 @@ class _HomeScreenState extends State<HomeScreen> {
           },
         ),
       ),
+    );
+  }
+}
+
+class BudgetDetail extends StatelessWidget {
+  final String label;
+  final double amount;
+  final Color color;
+
+  const BudgetDetail({
+    Key? key,
+    required this.label,
+    required this.amount,
+    required this.color,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      '$label: \$${amount.toStringAsFixed(2)}',
+      style: TextStyle(fontSize: 16, color: color),
     );
   }
 }

@@ -6,19 +6,12 @@ class ExpenseSummaryScreen extends StatelessWidget {
 
   const ExpenseSummaryScreen({Key? key, required this.expenses}) : super(key: key);
 
+  /// Calculate total expenses per category
   Map<String, double> getCategoryTotals() {
-    final Map<String, double> categoryTotals = {};
-
-    for (var expense in expenses) {
-      if (categoryTotals.containsKey(expense.category)) {
-        categoryTotals[expense.category] =
-            categoryTotals[expense.category]! + expense.amount;
-      } else {
-        categoryTotals[expense.category] = expense.amount;
-      }
-    }
-
-    return categoryTotals;
+    return expenses.fold(<String, double>{}, (totals, expense) {
+      totals[expense.category] = (totals[expense.category] ?? 0) + expense.amount;
+      return totals;
+    });
   }
 
   @override

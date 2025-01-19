@@ -6,7 +6,14 @@ class ExpenseListScreen extends StatelessWidget {
   final List<Expense> expenses;
   final Function(int) onDelete;
 
-  const ExpenseListScreen({Key? key, required this.expenses, required this.onDelete}) : super(key: key);
+   ExpenseListScreen({Key? key, required this.expenses, required this.onDelete}) : super(key: key);
+
+  final Map<String, String> categoryImages = {
+    'Food': 'lib/assets/images/food.png',
+    'Transport': 'lib/assets/images/travel.png',
+    'Health': 'lib/assets/images/health.png',
+    'Others': 'lib/assets/images/other.png',
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -29,15 +36,10 @@ class ExpenseListScreen extends StatelessWidget {
                   margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                   elevation: 3,
                   child: ListTile(
-                    leading: CircleAvatar(
-                      radius: 30,
-                      backgroundColor: Colors.teal,
-                      child: FittedBox(
-                        child: Text(
-                          '\$${expense.amount.toStringAsFixed(2)}',
-                          style: const TextStyle(color: Colors.white),
-                        ),
-                      ),
+                    leading: Image.asset(
+                      categoryImages[expense.category]!,
+                      width: 40,
+                      height: 40,
                     ),
                     title: Text(
                       expense.title,
