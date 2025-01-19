@@ -1,0 +1,37 @@
+name: Flutter CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Flutter Build & Test
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Checkout code
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # Step 2: Set up Flutter environment
+    - name: Install Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '<latest>'
+
+    # Step 3: Install dependencies
+    - name: Install dependencies
+      run: flutter pub get
+
+    # Step 4: Run analyzer (static code analysis)
+    - name: Run Flutter Analyze
+      run: flutter analyze
+
+    # Step 5: Run tests
+    - name: Run Flutter Tests
+      run: flutter test
