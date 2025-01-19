@@ -120,50 +120,45 @@ This project demonstrates clean code practices with examples and explanations. B
 
 ## Clean Code Practices
 
-### 1. Single Responsibility Principle
-**Update:** The `_deleteExpense` logic was extracted into a separate private method to handle budget updates. This ensures the `_deleteExpense` method focuses only on removing the expense.
+### 1. **Single Responsibility Principle**
+**Update:** The `_deleteExpense` logic was extracted into separate private methods: `_removeExpense` and `_updateRemainingBudget`. This ensures that each method handles only one responsibility, simplifying the logic and improving readability.
 
 **Example:**
-- [`BudgetScreen`](https://github.com/jude8786/Software-Engineering-Project/blob/master/lib/screens/budget_screen.dart
-) only manages budget operations instead of mixing transaction logic.
+- [`HomeScreen`](https://github.com/jude8786/Software-Engineering-Project/blob/master/lib/screens/home_screen.dart) handles expense deletion and budget updates using separate methods.
 
 ---
 
-### 2. Readable Names
-**Update:** Renamed `_buildHomeTab` to [`_buildTransactionOverviewTab`](https://github.com/jude8786/Software-Engineering-Project/blob/master/lib/screens/budget_screen.dart
-) for better clarity about its purpose.
+### 2. **Readable Names**
+**Update:** The `_buildBudgetDetail` method was renamed and converted into a reusable widget called `BudgetDetail`. This change improves the readability and modularity of the code.
 
 **Example:**
-- Updated `_buildHomeTab` to have meaningful and structured widgets like `_buildBudgetOverview` and `_buildTransactionList`.
+- [`HomeScreen`](https://github.com/jude8786/Software-Engineering-Project/blob/master/lib/screens/home_screen.dart) uses `BudgetDetail` for improved clarity and reusability.
 
 ---
 
-### 3. Encapsulation
-**Update:**
-- State variables like `_selectedIndex` and `_expenses` are private to `HomeScreen` or [`ExpenseTrackerAppState`](https://github.com/jude8786/Software-Engineering-Project/blob/master/lib/screens/expense_summary_screen.dart
-) to prevent external modifications.
+### 3. **Encapsulation**
+**Update:** Input validation logic in `AddExpenseScreen` was extracted into a private `_validateInputs` method. This encapsulates the validation logic, keeping it separate from the main logic of the `_saveExpense` method.
 
 **Example:**
-- Encapsulated input validation logic within a private `_validateAndParseBudget` method. This method handles both validation and parsing, ensuring the rest of the code doesn’t need to worry about these details.
+- [`AddExpenseScreen`](https://github.com/jude8786/Software-Engineering-Project/blob/master/lib/screens/add_expense_screen.dart) encapsulates validation in `_validateInputs`.
 
 ---
 
-### 4. DRY (Don’t Repeat Yourself) Principle
-**Updates:**
-1. **Input Validation and Parsing:**
-   - Encapsulated in the [`_validateAndParseBudget](https://github.com/jude8786/Software-Engineering-Project/blob/master/lib/screens/expense_list_screen.dart)  method to avoid redundant validation checks across multiple places.
-   - This method is reused wherever input validation is required.
+### 4. **DRY (Don’t Repeat Yourself) Principle**
+**Update:** The logic for calculating category totals in `ExpenseSummaryScreen` was refactored to use `fold`, reducing redundancy and improving maintainability.
 
-2. **Reusability:**
-   - Removed repetitive `expenses.isEmpty` logic by creating a reusable private `_buildEmptyMessage` method.
+**Example:**
+- [`ExpenseSummaryScreen`](https://github.com/jude8786/Software-Engineering-Project/blob/master/lib/screens/expense_summary_screen.dart) simplifies category total calculations using `fold`.
 
 ---
 
-### 5. User Feedback
-**Update:**
-- Added a confirmation dialog before [deleting an expense](
-https://github.com/jude8786/Software-Engineering-Project/blob/master/lib/screens/add_expense_screen.dart
-) to provide better user feedback and prevent accidental deletions.
+### 5. **Mixins**
+**Update:** Shared validation logic was centralized into an `InputValidationMixin` for reuse across multiple widgets and screens.
+
+**Example:**
+- [`AddExpenseScreen`](https://github.com/jude8786/Software-Engineering-Project/blob/master/lib/screens/add_expense_screen.dart) applies `InputValidationMixin` for modular validation logic.
+
+---
 
 ---
 
