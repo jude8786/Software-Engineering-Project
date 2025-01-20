@@ -336,7 +336,7 @@ Stores project-specific properties for improved manageability.
 ---
 
 ## 10. Continuous Delivery
-- Implemented a CI/CD pipeline using **GitHub Actions** with at least two automated scripts:
+- Implemented a CI/CD pipeline using [**GitHub Actions**](https://github.com/jude8786/Software-Engineering-Project/actions) with at least two automated scripts:
   1. Install dependencies.
   2. Run Tests.
   3. Build the release APK.
