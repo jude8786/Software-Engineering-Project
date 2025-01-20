@@ -1,5 +1,6 @@
 
-# Expense Tracker Application 🛠️💰
+# Expense Tracker Application 
+# BY JUDE PERUMAL
 
 A Flutter-based project aimed at simplifying financial tracking and budget management. This project not only helps users stay organized with their finances but also showcases my learning journey and technical expertise.
 
