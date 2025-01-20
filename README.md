@@ -23,6 +23,11 @@ Traditional methods, like notebooks and spreadsheets, were cumbersome and prone 
 
 ### 1. Use and Understand Git
 Basic Git commands such as branching, merging, and time-travel techniques were used throughout the project.
+![Image](https://github.com/user-attachments/assets/c3ae49e6-fae2-40e7-9705-a6239dbbfb2e)
+
+![Image](https://github.com/user-attachments/assets/1c278085-5951-4e90-ab43-87701c6eff41)
+
+![Image](https://github.com/user-attachments/assets/35a43d09-433e-409d-9b20-e7a553cf6f77)
 
 ---
 
